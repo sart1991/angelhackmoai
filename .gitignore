@@ -59,3 +59,30 @@ typings/
 
 # next.js build output
 .next
+
+.DS_Store
+
+*.apk
+*.ap_
+*.dex
+gen/
+out/
+build/
+target/
+local.properties
+proguard/
+*.log
+.navigation/
+captures/
+*.iml
+*.jks
+.externalNativeBuild
+gen-external-apklibs
+*.ear
+hs_err_pid*
+gradle/*
+gradlew
+gradlew.bat
+.gradle/
+.idea/
+*.class
