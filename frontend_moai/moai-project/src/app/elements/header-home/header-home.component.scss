@@ -1,0 +1,56 @@
+@import "../header/header.component";
+
+.main-banner {
+  background: url("../../../assets/earth-hands.png") no-repeat;
+  background-size: cover;
+  height: 41rem;
+  color: #fff;
+  margin-bottom: 4rem;
+}
+
+.menu-option {
+  color: #fff;
+}
+
+.header {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.catchy-phrase {
+  padding-left: 4rem;
+
+  p {
+    margin-bottom: 0;
+    font-size: 3rem;
+  }
+
+}
+
+
+.metrics {
+  padding: 3rem 0;
+  padding-left: 4rem;
+}
+
+.metric-item {
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.metric-number {
+  font-family: 'Lilita One', cursive;
+  font-size: 4rem;
+}
+
+.metric-description {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}

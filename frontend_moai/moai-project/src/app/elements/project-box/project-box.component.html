@@ -1,0 +1,30 @@
+
+<mat-card class="project-box text-center">
+  <img mat-card-image [src]="project.media" alt="Project image">
+  <mat-card-content>
+    <p class="project-title">{{project.title}}</p>
+    <mat-divider></mat-divider>
+     <div class="project-status row">
+         <div class="project-metrics col-sm-4">
+
+             <div class="metric-item founded">
+                 <div class="number">
+                     {{project.foundedPercentage}}%
+                 </div>
+                 <span class="description">Fundado</span>
+             </div>
+             <div class="metric-item days-left">
+                 <div class="number">{{project.daysLeft}}</div>
+                 <span class="description">días restantes</span>
+
+             </div>
+         </div>
+         <div class="project-actions col-sm-8">
+             <mat-progress-bar mode="determinate" [value]="project.foundedPercentage"></mat-progress-bar>
+             <p class="status-description">Estado del proyecto</p>
+
+             <a class="btn-project-detail" mat-raised-button routerLink="/detalle-de-proyecto">Ver más</a>
+         </div>
+     </div>
+  </mat-card-content>
+</mat-card>

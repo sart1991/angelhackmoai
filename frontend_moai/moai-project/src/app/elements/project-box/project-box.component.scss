@@ -1,0 +1,60 @@
+.project-box {
+
+}
+
+.project-title {
+  color: #4a4a4a;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: Montserrat;
+}
+
+.btn-project-detail {
+  background-color: #fc783d;
+  color: #fff;
+  font-family: Montserrat;
+  font-weight: 300;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+}
+
+.mat-progress-bar-fill::after {
+  background-color: #645494 !important;
+}
+
+.project-status {
+  padding-top: 1.5rem;
+}
+
+.project-metrics {
+
+  border-right: 1px solid #ebebeb;
+
+
+  .metric-item {
+
+    text-align: left;
+    font-family: Montserrat;
+
+
+  }
+
+  .number {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    color: #a0a0a0;
+  }
+
+}
+
+.status-description {
+  color: #9b9b9b;
+  text-align: left;
+  margin-top: 0.5rem;
+  font-family: Montserrat;
+}

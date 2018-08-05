@@ -1,0 +1,113 @@
+<app-header></app-header>
+
+<section class="container-fluid">
+
+    <div class="invest-header">
+        <p>Haz elegido invertir en el proyecto:</p>
+
+        <h1 class="project-title">
+            Título del proyecto
+        </h1>
+    </div>
+
+
+    <mat-divider></mat-divider>
+
+
+    <mat-horizontal-stepper linear #stepper>
+
+        <mat-step [stepControl]="investmentTypeFormGroup">
+            <form [formGroup]="investmentTypeFormGroup">
+                <ng-template matStepLabel>Invertir con:</ng-template>
+
+                <mat-radio-group class="investment-types-group d-flex justify-content-around"
+                                 [(ngModel)]="investmentId"
+                                 formControlName="investmentTypeCtrl">
+                    <mat-radio-button class="investment-types-button"
+                                      *ngFor="let investmentType of investmentTypes$"
+                                      [value]="investmentType.id"
+                                      required>
+
+
+                        <mat-card class="">
+                            <img mat-card-image [src]="investmentType.media" alt="Investment Image">
+
+                            <mat-card-content>
+                                {{investmentType.name}}
+                            </mat-card-content>
+                        </mat-card>
+
+
+                    </mat-radio-button>
+                </mat-radio-group>
+
+                <mat-form-field *ngIf="investmentId === 1" class="d-flex justify-content-center">
+                    <input matInput placeholder="Monto (COP)" formControlName="investmentTypeCtrl" required>
+                </mat-form-field>
+
+                <div>
+                    <button mat-button matStepperNext>Siguiente</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="paymentFormGroup">
+            <form [formGroup]="paymentFormGroup">
+                <ng-template matStepLabel>Medio de inversión:</ng-template>
+                <mat-radio-group class="investment-types-group d-flex justify-content-around"
+                                 [(ngModel)]="paymentId"
+                                 formControlName="paymentCtrl">
+                    <mat-radio-button class="investment-types-button"
+                                      [value]="0"
+                                      required>
+
+                        <mat-card class="">
+                            <img mat-card-image src="../../../assets/tdc.svg" alt="Payment Method">
+
+                            <mat-card-content>
+                                Tarjeta de Crédito
+                            </mat-card-content>
+                        </mat-card>
+
+
+                    </mat-radio-button>
+                    <mat-radio-button class="investment-types-button"
+                                      [value]="1"
+                                      required>
+                        <mat-card class="">
+                            <img mat-card-image src="../../../assets/otros.svg" alt="Payment Method">
+
+                            <mat-card-content>
+                                Otros métodos de pago
+                            </mat-card-content>
+                        </mat-card>
+
+
+                    </mat-radio-button>
+                </mat-radio-group>
+                <div>
+                    <button mat-button matStepperPrevious>Regresar</button>
+                    <button mat-button matStepperNext>Siguiente</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="legalInfoFormGroup">
+            <form [formGroup]="legalInfoFormGroup">
+                <ng-template matStepLabel>Adjuntar información legal:</ng-template>
+                <mat-checkbox formControlName="legalInfoCtrl" required>Adjuntar declaración de ingresos</mat-checkbox>
+                <div>
+                    <button mat-button matStepperPrevious>Regresar</button>
+                    <button mat-button matStepperNext>Siguiente</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Confirmación:</ng-template>
+            <button mat-button (click)="openDialog()">Invertir</button>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+
+</section>

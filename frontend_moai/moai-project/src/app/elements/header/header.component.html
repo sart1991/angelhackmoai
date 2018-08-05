@@ -1,0 +1,14 @@
+<mat-toolbar class="d-flex justify-content-between header">
+
+  <app-logo [logoColor]="'green'"></app-logo>
+
+  <nav>
+    <a class="menu-option"
+       ngClass="{active: $index == 0}"
+       *ngFor="let nav of navLinks$"
+       [routerLink]="nav.link">
+      {{nav.title}}
+    </a>
+  </nav>
+
+</mat-toolbar>

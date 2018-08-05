@@ -1,0 +1,37 @@
+<section class="main-banner d-flex flex-column justify-content-between">
+    <mat-toolbar class="d-flex justify-content-between header bg-transparent">
+
+        <app-logo [logoColor]="'white'"></app-logo>
+
+        <nav>
+            <a class="menu-option"
+               ngClass="{active: $index == 0}"
+               *ngFor="let nav of navLinks$"
+               [routerLink]="nav.link">
+                {{nav.title}}
+            </a>
+        </nav>
+
+    </mat-toolbar>
+
+    <section class="catchy-phrase">
+        <p class="text-uppercase">
+            Invierta dinero en lo que
+        </p>
+        <p class="text-uppercase">
+            <strong>más vale la pena en este país.</strong>
+        </p>
+    </section>
+
+    <section class="metrics d-flex justify-content-around">
+        <div class="metric-item d-flex" *ngFor="let metric of metrics">
+            <div class="metric-number">
+                {{ metric.number }}
+            </div>
+            <div class="metric-description">
+                {{ metric.description }}
+            </div>
+        </div>
+    </section>
+
+</section>
