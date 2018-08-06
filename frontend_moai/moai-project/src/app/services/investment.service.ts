@@ -21,7 +21,7 @@ export class InvestmentService {
             id: 2,
             name: 'Mano de Obra',
             media: '../../../assets/semillas.svg'
-        }
+        },
         {
             id: 3,
             name: 'Transporte',
